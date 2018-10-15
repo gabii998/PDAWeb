@@ -6,13 +6,13 @@ function initMap() {
     document.getElementById('map'), {zoom: 15, center: uluru});
     infoWindow = new google.maps.InfoWindow;
     miUbicacion(map)
-      getPlaces(map);
-      getSendedLocation(map);
+    getPlaces(map);
+    getSendedLocation(map);
 
   }
   function miUbicacion(map){
     if(navigator.geolocation){
-        var meImage="img/ic_person.png";
+        var meImage=window.location.origin+"/vistas/img/ic_person.png";
         navigator.geolocation.getCurrentPosition(function(position){
            // navigator.geolocation.watchPosition(function(position){
           var pos={
@@ -20,7 +20,11 @@ function initMap() {
               lng: position.coords.longitude
         }
         map.setCenter(pos);
-        var locationMarker= new google.maps.Marker({position: pos, map:map, title:"Yo",icon:meImage});
+        var locationMarker= new google.maps.Marker({position: pos,
+             map:map,
+              title:"Yo",
+              icon: meImage
+            });
             },function(){alert("No se pudo acceder a la ubicación")},function (){},{enableHighAccuracy:true}
         );
     }else{
@@ -30,12 +34,12 @@ function initMap() {
   function getPlaces(mapa){
    //Funcion para obtener y dibujar los puntos en el mapa
     $.ajax({
-        url: "GetPlaces.php",
+        url: window.location.origin+"/Comercios",
         dataType: "JSON",
         success: function(json){
             var obj= jQuery.parseJSON(JSON.stringify(json));
             var comercios= obj.Comercios;
-            var image="img/ic_pda.png"
+            var image=window.location.origin+"/vistas/img/ic_pda.png"
             var infoWindow= new google.maps.InfoWindow()
             for(var i=0;i<comercios.length;i++){
                 var lat=comercios[i].latitud
@@ -63,7 +67,7 @@ function initMap() {
   function getSendedLocation(mapa){
     //Funcion para obtener y dibujar los puntos en el mapa
      $.ajax({
-         url: "Comercios",
+         url: "",
          type : "get",
          data : {
              func : getUrlVars()["func"],

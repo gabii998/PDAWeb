@@ -22,7 +22,7 @@
         <!-- MDB core JavaScript -->
         <script type="text/javascript" src="/vistas/js/mdb.min.js"></script>
         <script async defer
-            src="https://maps.googleapis.com/maps/api/js?v=weekly&key=AIzaSyABnx9fjUPqca7ylNahJDGf18Fo0IQEQ0s&callback=initMap">
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABnx9fjUPqca7ylNahJDGf18Fo0IQEQ0s&callback=initMap">
         </script>
         <script src="/vistas/js/usuario/map.js"></script>
         <?php  
