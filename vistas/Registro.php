@@ -12,7 +12,16 @@
     </head>
     <body>
         <?php include_once("navbar.php"); ?>
-        <form action="/Registro" method="POST">
+        <div class="container">
+            <div class="row justify-content-center ">
+            <div class="alert alert-dark" role="alert">
+                A simple light alert—check it out!
+            </div>
+            </div>
+            <div class="row">
+            <div class="col"></div>
+            <div class="col">
+            <form action="/Registro" method="POST">
                 <div class="md-form mb-5">
                     <i class="fa fa-envelope prefix grey-text"></i>
                     <input type="email" id="correo" name="correo" class="form-control validate">
@@ -29,9 +38,14 @@
                     <label data-error="wrong"  for="defaultForm-pass">Contraseña</label>
                 </div>
                 <div class="text-center mt-2">
-                  <button id="submit" class="btn  mx-auto" type="submit"  style="background: #720293" onclick="sendLogin()">Iniciar</button>
+                  <button id="submit" class="btn  mx-auto" type="submit" style="background: #720293">Registrarse</button>
                 </div>
             </form>
+            </div>
+            <div class="col"></div>
+            </div>
+        </div>
+ 
         <script type="text/javascript" src="/vistas/js/jquery-3.3.1.min.js"></script>
         <!-- Bootstrap tooltips -->
         <script type="text/javascript" src="/vistas/js/popper.min.js"></script>

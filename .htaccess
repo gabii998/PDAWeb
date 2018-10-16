@@ -1,4 +1,7 @@
 php_flag display_errors 1
+Header always append X-Frame-Options SAMEORIGIN
+Header always set X-Xss-Protection "1; mode=block"
+Header always set X-Content-Type-Options "nosniff"
 <IfModule mod_rewrite.c>
 	RewriteEngine on
 
@@ -7,3 +10,4 @@ php_flag display_errors 1
 
 	RewriteRule ^(.*)$ index.php/$1 [L]
 </IfModule>
+Options -Indexes

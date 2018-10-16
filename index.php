@@ -2,7 +2,7 @@
 session_start();
 include __DIR__ . '/controladores/Comercios.php';
 include __DIR__ . '/controladores/Usuarios.php';
-ini_set('display_errors', 1);
+ini_set('display_errors', 0);
 define('SERVER',getcwd());
 $request = $_SERVER['REDIRECT_URL'];
 
