@@ -1,10 +1,11 @@
 <?php
+// El .htaccess redirecciona todas las request a este controlador principal
 session_start();
 include __DIR__ . '/controladores/Comercios.php';
 include __DIR__ . '/controladores/Usuarios.php';
-ini_set('display_errors', 0);
-define('SERVER',getcwd());
-$request = $_SERVER['REDIRECT_URL'];
+//Setear en 1 para depurar errores
+ini_set('display_errors', 1);
+$request = $_SERVER['REDIRECT_URL'];//Valor de la url
 
 switch ($request) {
     case '/' :
@@ -17,8 +18,6 @@ switch ($request) {
         require __DIR__ .'/vistas/Mapa.php';
         break;
     case '/Registro' :
-        //
-        //ControladorUsuarios::registrar($_GET);
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             require __DIR__ .'/vistas/Registro.php';
             }

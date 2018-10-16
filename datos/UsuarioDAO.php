@@ -5,12 +5,6 @@ include_once "DbHelper.php";
 class UsuarioDAO{
     private $tableName="Usuarios";
 
-    public function crearBaseDeDatos(){
-        $conexion=DbHelper::conectar();
-        $operacion="CREATE DATABASE IF NOT EXISTS`PDA` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */;";
-          $resultado=mysqli_query($conexion,$operacion);
-    }
-
     public function crearTabla(){
         $conexion=DbHelper::conectar();
         $operacion="CREATE TABLE IF NOT EXISTS `Usuarios` (
@@ -43,7 +37,6 @@ class UsuarioDAO{
         $json=array();
         $email=$usuario->getEmail();
         $password=$usuario->getContrasena();
-        
         $conexion=DbHelper::conectar();
         //$consulta="SELECT * FROM ".$this->tableName." WHERE email='".$email."' ";
         $consulta="SELECT * FROM Usuarios WHERE email=?";
