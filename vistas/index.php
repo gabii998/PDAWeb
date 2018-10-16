@@ -21,7 +21,7 @@
       <img src="/vistas/img/logo.png" height="145" width="145" class="rounded mx-auto d-block mb-5" 
       <h2 class="card-title h2 my-4 ">¡Bienvenido a Punto de Apoyo!</h2>
       <p class="mb-4 pb-2 px-md-5 mx-md-5">Punto de Apoyo es una plataforma de apoyo...</p>
-      <a class="btn white text-dark"><i class="fa fa-clone left"></i>Más información</a>
+      <a class="btn white text-dark" href="Acerca"><i class="fa fa-clone left"></i>Más información</a>
 
     </div>
   </div>

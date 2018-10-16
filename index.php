@@ -42,6 +42,9 @@ switch ($request) {
         session_unset();
         header("location:/");
         break;
+    case '/Acerca':
+        require __DIR__ . '/vistas/About.php';
+        break;
     default:
         echo'<h1>Página no encontrada</h1>';
         break;

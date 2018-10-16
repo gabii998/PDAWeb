@@ -14,7 +14,7 @@ include_once("LoginModal.php") ?>
       <a class="nav-link" href="Mapa">Mapa</a>
     </li>
     <li class="nav-item active">
-      <a class="nav-link" href="#">Acerca de PDA</a>
+      <a class="nav-link" href="Acerca">Acerca de PDA</a>
     </li>
   </ul>
 
