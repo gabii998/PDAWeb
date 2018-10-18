@@ -28,7 +28,5 @@ include_once("LoginModal.php") ?>
     ?>
     
   </ul>
-
-
   </div>
 </nav>

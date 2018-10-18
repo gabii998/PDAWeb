@@ -4,12 +4,17 @@ private $email;
 private $contrasena;
 private $dni;
 
+
     public function __construct($email,$contrasena){
         $this->email=$email;
         $this->contrasena=$contrasena;
     }
+    public function constructorRegistro($email,$contrasena,$dn){
+        $this->email=$email;
+        $this->contrasena=$contrasena;
+        $this->dni=$dni;
+    }
     
-
     public function getEmail(){
     return $this->email;
     }
@@ -19,13 +24,15 @@ private $dni;
     public function getDni(){
     return $this->dni;
     }
-    public function setNombre(){
-    $this->nombre=$nombre;
+    
+    public function setEmail($email){
+    $this->email=$email;
     }
-    public function setContrasena(){
+    public function setContrasena($contrasena){
     $this->contrasena=$contrasena;
     }
     public function setDni($dni){
     $this->dni=$dni;
     }
+    
 }

@@ -4,22 +4,10 @@ include_once "DbHelper.php";
 
 class UsuarioDAO{
     private $tableName="Usuarios";
-
-    public function crearTabla(){
-        $conexion=DbHelper::conectar();
-        $operacion="CREATE TABLE IF NOT EXISTS `Usuarios` (
-            `email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-            `pass` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
-            `dni` varchar(8) COLLATE utf8mb4_unicode_ci NOT NULL,
-            `recoveryHash` varchar(128) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-            PRIMARY KEY (`email`)
-          ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;";
-          $resultado=mysqli_query($conexion,$operacion);
-    }
    
     public function agregarUsuario(Usuario $usuario){
+        $json=array();
         $conexion=DbHelper::conectar();
-        $this->crearTabla();
         $email=$usuario->getEmail();
         $contrasena=$usuario->getContrasena();
         $contrasena=hash('sha512',$contrasena);
@@ -28,10 +16,12 @@ class UsuarioDAO{
         $sentencia=$conexion->prepare($operacion);
         $sentencia->bind_param("sss",$email,$contrasena,$dni);
         if($sentencia->execute()){
-            return "registrado";
+            $json['estado']="registrado";
+            $json['dni']=$dni;
         }else{
-            return "-1";
-        }       
+            $json['estado']="error";
+        }
+        echo json_encode($json);       
     }
     public function loguearUsuario(Usuario $usuario){
         $json=array();

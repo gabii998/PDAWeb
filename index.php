@@ -22,8 +22,8 @@ switch ($request) {
             require __DIR__ .'/vistas/Registro.php';
             }
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
-            ControladorUsuarios::registrar($_POST);
-            header("location:/");
+            echo ControladorUsuarios::registrar($_POST);
+            //header("location:/");
         }
         break;
     case '/Comercios':
