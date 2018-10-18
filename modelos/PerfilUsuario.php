@@ -1,15 +1,24 @@
 <?php
 class PerfilUsuario{
+    //Este modelo es para todos los datos del usuario que no sean críticos para la sesión
+    private $correo;
     private $nombre;
     private $apellido;
     private $fechaNacimiento;
     private $telefono;
+    private $dni;
 
-    public function __construct($nombre,$apellido,$fechaNacimiento,$telefono){
+    public function __construct($correo,$nombre,$apellido,$fechaNacimiento,$telefono,$dni){
+        $this->correo=$correo;
         $this->nombre=$nombre;
         $this->apellido=$apellido;
         $this->fechaNacimiento=$fechaNacimiento;
         $this->telefono=$telefono;
+        $this->dni=$dni;
+    }
+
+    public function getCorreo(){
+        return $this->correo;
     }
 
     public function getNombre(){
@@ -25,6 +34,12 @@ class PerfilUsuario{
     public function getTelefono(){
         return $this->telefono;
     }
+    public function getDni(){
+        return $this->dni;
+    }
+    public function setCorreo($correo){
+        $this->correo=$correo;
+    }
     public function setNombre($nombre){
         $this->nombre=$nombre;
     }
@@ -36,5 +51,8 @@ class PerfilUsuario{
     }
     public function setTelefono($telefono){
         $this->telefono=$telefono;
+    }
+    public function setDNi($dni){
+        $this->dni=$dni;
     }
 }

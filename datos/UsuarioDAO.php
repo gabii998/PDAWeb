@@ -3,6 +3,7 @@ include SITE_ROOT."/modelos/Usuario.php";
 include_once "DbHelper.php";
 
 class UsuarioDAO{
+    //Clase que interactúa directamente con la tabla 'Usuarios'
     private $tableName="Usuarios";
    
     public function agregarUsuario(Usuario $usuario){
@@ -11,13 +12,12 @@ class UsuarioDAO{
         $email=$usuario->getEmail();
         $contrasena=$usuario->getContrasena();
         $contrasena=hash('sha512',$contrasena);
-        $dni=$usuario->getDni();
-        $operacion="INSERT INTO Usuarios (email,pass,dni) VALUES(?,?,?)";
+        
+        $operacion="INSERT INTO Usuarios (email,pass) VALUES(?,?)";
         $sentencia=$conexion->prepare($operacion);
-        $sentencia->bind_param("sss",$email,$contrasena,$dni);
+        $sentencia->bind_param("ss",$email,$contrasena);
         if($sentencia->execute()){
             $json['estado']="registrado";
-            $json['dni']=$dni;
         }else{
             $json['estado']="error";
         }

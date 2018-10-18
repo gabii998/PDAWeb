@@ -1,25 +1,15 @@
 <?php
 class DbHelper{
-    public function __construct(){
-        
-    }
+    //Clase que contiene datos en común, necesarios para el correcto funcionamiento de la DB
 
     public static function conectar(){
         DbHelper::crearBaseDeDatos();
-        $serverName="localhost";
-        $serverUser="root";
-        $serverPassword="11";
-        $serverDbName="PDA";
-        $conexion=mysqli_connect($serverName,$serverUser,$serverPassword,$serverDbName);
+        $conexion=mysqli_connect(DBSERVERNAME,DBUSER,DBPASSWORD,DBNAME);
         return $conexion;
     }
     public static function crearBaseDeDatos(){
         //$helper= new self();
-        $serverName="localhost";
-        $serverUser="root";
-        $serverPassword="11";
-        $serverDbName="PDA";
-        $conexion=mysqli_connect($serverName,$serverUser,$serverPassword);
+        $conexion=mysqli_connect(DBSERVERNAME,DBUSER,DBPASSWORD);
         $operacion="CREATE DATABASE IF NOT EXISTS`PDA` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */;";
         $resultado=mysqli_query($conexion,$operacion);
         /*$helper->crearTablaUsuarios();

@@ -13,11 +13,20 @@ class ControladorUsuarios{
     }
     public static function registrar($parametrosPost){
         $dao=new UsuarioDAO();
+        $perfilDao=new PerfilUsuarioDAO();
+        //Datos de sesión
         $correo=$parametrosPost['registroCorreo'];
         $contrasena=$parametrosPost['registroContrasena'];
+        //Datos de perfil
+        $nombre=$parametrosPost['registroNombre'];
+        $apellido=$parametrosPost['registroApellido'];
+        $fecha=$parametrosPost['registroFecha'];
+        $telefono=$parametrosPost['registroTelefono'];
         $dni=$parametrosPost['dni'];
+        $perfil= new PerfilUsuario($correo,$nombre,$apellido,$fecha,$telefono);
         $usuario= new Usuario($correo,$contrasena);
         $usuario->setDni($dni);
+        $perfilDao->completarPerfil($perfil);
         echo $dao->agregarUsuario($usuario);
     }
     public static function completarPerfil($parametrosPost){
