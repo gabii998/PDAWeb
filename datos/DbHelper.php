@@ -23,7 +23,7 @@ class DbHelper{
         $conexion=DbHelper::conectar();
         $operacion="CREATE TABLE IF NOT EXISTS `PDA`.`Usuarios` (
             `email` VARCHAR(100) NOT NULL,
-            `pass` VARCHAR(50) NOT NULL,
+            `pass` VARCHAR(128) NOT NULL,
             `UsuariosInfo_dni` VARCHAR(8) NOT NULL,
             PRIMARY KEY (`email`, `UsuariosInfo_dni`),
             INDEX `fk_Usuarios_UsuariosInfo_idx` (`UsuariosInfo_dni` ASC) VISIBLE,

@@ -8,7 +8,7 @@ class ControladorUsuarios{
         $dao=new UsuarioDAO();
         $correo=$parametrosPost['correo'];
         $contrasena=$parametrosPost['contrasena'];
-        $usuario= new Usuario($correo,$contrasena);
+        $usuario= new Usuario($correo,$contrasena,null);
         return $dao->loguearUsuario($usuario);
     }
     public static function registrar($parametrosPost){
