@@ -15,9 +15,10 @@
 
 <body>
     <?php include_once("navbar.php"); ?>
-    <div class="container">
+    <div class="container" id="contenido">
     <form id="formRegistro">
-        <div class="row py-5">
+        <div class="row" id="mensaje"></div>
+        <div class="row py-5" >
             <div class="col-md">
                     <div class="md-form mb-5">
                         <i class="fa fa-envelope prefix grey-text"></i>

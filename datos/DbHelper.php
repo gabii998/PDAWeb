@@ -1,4 +1,5 @@
 <?php
+//include __DIR__."/../constantes.php";
 class DbHelper{
     //Clase que contiene datos en común, necesarios para el correcto funcionamiento de la DB
 
@@ -9,7 +10,7 @@ class DbHelper{
     }
     public static function crearBaseDeDatos(){
         //$helper= new self();
-        $conexion=mysqli_connect(DBSERVERNAME,DBUSER,DBPASSWORD);
+        $conexion=mysqli_connect(DBSERVERNAME,DBUSER,DBPASSWORD) or die ($conexion->error);
         $operacion="CREATE DATABASE IF NOT EXISTS`PDA` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */;";
         $resultado=mysqli_query($conexion,$operacion);
         /*$helper->crearTablaUsuarios();
@@ -18,28 +19,34 @@ class DbHelper{
         el momento fueron deshabilitadas debido a errores*/
         mysqli_close($conexion);
     }
-    public function crearTablaUsuarios(){
+    public static function crearTablaUsuarios(){
         $conexion=DbHelper::conectar();
-        $operacion="CREATE TABLE IF NOT EXISTS `Usuarios` (
-            `email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-            `pass` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
-            `dni` varchar(8) COLLATE utf8mb4_unicode_ci NOT NULL,
-            `recoveryHash` varchar(128) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-            PRIMARY KEY (`email`)
-          ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;";
+        $operacion="CREATE TABLE IF NOT EXISTS `PDA`.`Usuarios` (
+            `email` VARCHAR(100) NOT NULL,
+            `pass` VARCHAR(50) NOT NULL,
+            `UsuariosInfo_dni` VARCHAR(8) NOT NULL,
+            PRIMARY KEY (`email`, `UsuariosInfo_dni`),
+            INDEX `fk_Usuarios_UsuariosInfo_idx` (`UsuariosInfo_dni` ASC) VISIBLE,
+            CONSTRAINT `fk_Usuarios_UsuariosInfo`
+              FOREIGN KEY (`UsuariosInfo_dni`)
+              REFERENCES `PDA`.`UsuariosInfo` (`dni`)
+             )
+          ENGINE = InnoDB
+          DEFAULT CHARACTER SET = utf8mb4
+          COLLATE = utf8mb4_unicode_ci;";
           $resultado=mysqli_query($conexion,$operacion);
           mysqli_close($conexion);
     }
     public function crearTablaPerfiles(){
         $conexion=DbHelper::conectar();
-        $operacion="CREATE TABLE IF NOT EXISTS `UsuariosInfo` (
-            `perfDni` varchar(8) NOT NULL,
-            `perfNombre` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-            `perfApellido` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-            `perfFechaNacimiento` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-            `perfTelefono` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-            PRIMARY KEY (`perfDni`)
-          ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+        $operacion="CREATE TABLE IF NOT EXISTS `PDA`.`UsuariosInfo` (
+            `dni` VARCHAR(8) NOT NULL,
+            `apellido` VARCHAR(45) NOT NULL,
+            `nombre` VARCHAR(45) NOT NULL,
+            `fechaNacimiento` VARCHAR(45) NOT NULL,
+            `telefono` VARCHAR(45) CHARACTER SET 'utf8mb4' COLLATE 'utf8mb4_unicode_ci' NOT NULL,
+            PRIMARY KEY (`dni`))
+          ENGINE = InnoDB;
           ";
           $resultado=mysqli_query($conexion,$operacion);
           mysqli_close($conexion);

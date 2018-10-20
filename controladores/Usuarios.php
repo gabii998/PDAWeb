@@ -23,9 +23,8 @@ class ControladorUsuarios{
         $fecha=$parametrosPost['registroFecha'];
         $telefono=$parametrosPost['registroTelefono'];
         $dni=$parametrosPost['dni'];
-        $perfil= new PerfilUsuario($correo,$nombre,$apellido,$fecha,$telefono);
-        $usuario= new Usuario($correo,$contrasena);
-        $usuario->setDni($dni);
+        $perfil= new PerfilUsuario($nombre,$apellido,$fecha,$telefono,$dni);
+        $usuario= new Usuario($correo,$contrasena,$dni);
         $perfilDao->completarPerfil($perfil);
         echo $dao->agregarUsuario($usuario);
     }

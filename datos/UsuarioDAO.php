@@ -5,21 +5,42 @@ include_once "DbHelper.php";
 class UsuarioDAO{
     //Clase que interactúa directamente con la tabla 'Usuarios'
     private $tableName="Usuarios";
+
+    public function crearTablaUsuarios(){
+        $conexion=DbHelper::conectar();
+        $operacion="CREATE TABLE IF NOT EXISTS `PDA`.`Usuarios` (
+            `email` VARCHAR(100) NOT NULL,
+            `pass` VARCHAR(50) NOT NULL,
+            `UsuariosInfo_dni` VARCHAR(8) NOT NULL,
+            PRIMARY KEY (`email`, `UsuariosInfo_dni`),
+            CONSTRAINT `fk_Usuarios_UsuariosInfo`
+              FOREIGN KEY (`UsuariosInfo_dni`)
+              REFERENCES `PDA`.`UsuariosInfo` (`dni`),
+             CONSTRAINT `uq_Usuarios_email` UNIQUE (`email`),
+             CONSTRAINT `uq_Usuarios_dni` UNIQUE (`UsuariosInfo_dni`)
+             )
+          ENGINE = InnoDB;";
+          $resultado=mysqli_query($conexion,$operacion) or die ($conexion->error);
+          mysqli_close($conexion);
+    }
    
     public function agregarUsuario(Usuario $usuario){
+        $this->crearTablaUsuarios();
         $json=array();
         $conexion=DbHelper::conectar();
         $email=$usuario->getEmail();
         $contrasena=$usuario->getContrasena();
+        $dni=$usuario->getDni();
         $contrasena=hash('sha512',$contrasena);
         
-        $operacion="INSERT INTO Usuarios (email,pass) VALUES(?,?)";
+        $operacion="INSERT INTO Usuarios (email,pass,UsuariosInfo_dni) VALUES(?,?,?)";
         $sentencia=$conexion->prepare($operacion);
-        $sentencia->bind_param("ss",$email,$contrasena);
+        $sentencia->bind_param("sss",$email,$contrasena,$dni);
         if($sentencia->execute()){
             $json['estado']="registrado";
         }else{
-            $json['estado']="error";
+            $json['estado']=$conexion->error;
+            //die ($conexion->error);
         }
         echo json_encode($json);       
     }

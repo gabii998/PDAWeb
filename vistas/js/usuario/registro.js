@@ -15,7 +15,7 @@ $(function(){
                 var formulario=$("#formRegistro").serialize();
                 console.log(formulario);
                 if($("#formRegistro").valid()){
-                    app.llevarDatos()
+                    app.llevarDatos(formulario)
                 }
             });
         };
@@ -101,9 +101,11 @@ $(function(){
                 dataType:"JSON",
                 data: formulario,
                 success:function(datos){
+                    console.log(datos['estado']);
                     if(datos['estado']=="registrado"){
-                        console.log(datos['estado']);
                         app.completarPerfil();
+                    }else{
+                        app.imprimirAlerta();
                     }
                 },
                 error: function(){
@@ -112,11 +114,35 @@ $(function(){
             });
     
         };
+        app.imprimirAlerta = function(){
+            var contenido=`
+            <div class="alert alert-info" role="alert">
+                Al parecer ya te habías registrado con anterioridad
+            </div>
+            `;
+            $("#mensaje").replaceWith(contenido);
+        }
         app.completarPerfil = function(){
             var contenido=`
-            
+            <div class="row">
+                <div class="col-md"></div>
+                <div class="col-md">
+                    <div class="card mt-5">
+                        <div class="card-body text-center">
+                            <div class="card-title">
+                                <strong>Registrado correctamente</strong>
+                            </div>
+                            <div class="card-body">
+                            <i class="fa fa-5x fa-check-circle"></i>
+                            <div>Tu usuario fue creado con éxito, ahora puedes loguearte.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md"></div>
+            </div>
             `;
-            $("#contenido").html(contenido)
+            $("#contenido").replaceWith(contenido);
         };
 
         app.init();

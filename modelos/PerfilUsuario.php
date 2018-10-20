@@ -1,15 +1,13 @@
 <?php
 class PerfilUsuario{
     //Este modelo es para todos los datos del usuario que no sean críticos para la sesión
-    private $correo;
     private $nombre;
     private $apellido;
     private $fechaNacimiento;
     private $telefono;
     private $dni;
 
-    public function __construct($correo,$nombre,$apellido,$fechaNacimiento,$telefono,$dni){
-        $this->correo=$correo;
+    public function __construct($nombre,$apellido,$fechaNacimiento,$telefono,$dni){
         $this->nombre=$nombre;
         $this->apellido=$apellido;
         $this->fechaNacimiento=$fechaNacimiento;
