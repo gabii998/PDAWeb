@@ -1,3 +1,4 @@
+
 <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -6,19 +7,20 @@
             </div>
             
             <div class="modal-body mx-3">
-            <form action="/Login" method="POST">
+            <div id="mensaje"></div>
+            <form id="loginForm" >
                 <div class="md-form mb-5">
                     <i class="fa fa-envelope prefix grey-text"></i>
-                    <input type="email" id="correo" name="correo" class="form-control validate">
+                    <input type="email" id="correo" name="correo" class="form-control">
                     <label data-error="No es un correo válido"  for="defaultForm-email">Correo Electrónico</label>
                 </div>
                 <div class="md-form mb-4">
                     <i class="fa fa-lock prefix grey-text"></i>
-                    <input type="password" id="contrasena" name="contrasena" class="form-control validate">
+                    <input type="password" id="contrasena" name="contrasena" class="form-control">
                     <label data-error="wrong"  for="defaultForm-pass">Contraseña</label>
                 </div>
                 <div class="text-center mt-2">
-                  <button id="submit" class="btn  mx-auto" type="submit"  style="background: #720293" onclick="sendLogin()">Iniciar</button>
+                  <button id="submit" class="btn mx-auto" style="background: #720293">Iniciar</button>
                 </div>
             </form>
             </div>

@@ -30,5 +30,8 @@
             echo ' <script src="/vistas/js/usuario/modal.js"></script>';
         }  
         ?>
+        <!--JQuery validator plugin-->
+        <script type="text/javascript" src="/vistas/js/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="/vistas/js/additional-methods.min.js"></script>
     </body>
 </html>

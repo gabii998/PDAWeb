@@ -35,7 +35,8 @@ switch ($request) {
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
             $respuesta=ControladorUsuarios::loguear($_POST);
             $_SESSION=$respuesta;
-            header("location:/");
+           // header("location:/");
+           echo json_encode($respuesta);
         }
     break;
     case '/Logout':
