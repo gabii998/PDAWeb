@@ -27,7 +27,7 @@
                     </div>
                     <div class="md-form mb-5">
                         <i class="fa fa-address-book prefix grey-text"></i>
-                        <input type="number" min="8" id="dni" name="dni" class="form-control">
+                        <input type="number" id="dni" name="dni" class="form-control">
                         <label for="dni">DNI</label>
                     </div>
                     <div class="md-form mb-5">
@@ -100,21 +100,13 @@
             </div>
         </div>
     </div>
-
-    <script type="text/javascript" src="/vistas/js/jquery-3.3.1.min.js"></script>
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="/vistas/js/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="/vistas/js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="/vistas/js/mdb.min.js"></script>
-    <script type="text/javascript" src="/vistas/js/usuario/registro.js"></script>
+    <?php
+        include_once("scriptsIncluidos.html");
+    ?>
     <!--Date picker-->
     <script type="text/javascript" src="/vistas/js/datepicker.min.js"></script>
     <script type="text/javascript" src="/vistas/js/datepicker-es.js"></script>
-    <!--JQuery validator plugin-->
-    <script type="text/javascript" src="/vistas/js/jquery.validate.min.js"></script>
-    <script type="text/javascript" src="/vistas/js/additional-methods.min.js"></script>
+    <script type="text/javascript" src="/vistas/js/usuario/registro.js"></script>
 </body>
 
 </html>

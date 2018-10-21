@@ -27,16 +27,8 @@
   </div>
 </div>
 <!-- Jumbotron -->
-    <script type="text/javascript" src="/vistas/js/jquery-3.3.1.min.js"></script>
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="/vistas/js/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="/vistas/js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="/vistas/js/mdb.min.js"></script>
-    <!--JQuery validator plugin-->
-    <script type="text/javascript" src="/vistas/js/jquery.validate.min.js"></script>
-    <script type="text/javascript" src="/vistas/js/additional-methods.min.js"></script>
-    <script type="text/javascript" src="/vistas/js/usuario/login.js"></script>
+    <?php
+      include_once("scriptsIncluidos.html");
+    ?>
   </body>
 </html>

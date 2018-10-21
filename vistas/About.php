@@ -49,12 +49,8 @@
         </div>
         </div>
     </div>
-        <script type="text/javascript" src="/vistas/js/jquery-3.3.1.min.js"></script>
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="/vistas/js/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="/vistas/js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="/vistas/js/mdb.min.js"></script>
+    <?php
+        include_once("scriptsIncluidos.html");
+    ?>
   </body>
 </html>

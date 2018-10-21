@@ -4,7 +4,7 @@ session_start();
 include __DIR__ . '/controladores/Comercios.php';
 include __DIR__ . '/controladores/Usuarios.php';
 //Setear en 1 para depurar errores
-ini_set('display_errors', 1);
+ini_set('display_errors', 0);
 $request = $_SERVER['REDIRECT_URL'];//Valor de la url
 
 switch ($request) {
@@ -28,7 +28,8 @@ switch ($request) {
         break;
     case '/Comercios':
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-        ControladorComercios::obtenerComercios();
+        //ControladorComercios::obtenerComercios();
+        echo $_GET['id'];
         }
         break;
     case '/Login':

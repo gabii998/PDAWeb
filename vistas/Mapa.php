@@ -13,25 +13,16 @@
     <body>
         <?php include_once("navbar.php"); ?>
         <div id="map"></div>
-        <?php include_once("LoginModal.php")?>
-        <script type="text/javascript" src="/vistas/js/jquery-3.3.1.min.js"></script>
-        <!-- Bootstrap tooltips -->
-        <script type="text/javascript" src="/vistas/js/popper.min.js"></script>
-        <!-- Bootstrap core JavaScript -->
-        <script type="text/javascript" src="/vistas/js/bootstrap.min.js"></script>
-        <!-- MDB core JavaScript -->
-        <script type="text/javascript" src="/vistas/js/mdb.min.js"></script>
+        <?php 
+            include_once("LoginModal.php");
+            include_once("scriptsIncluidos.html");
+            if (!isset( $_SESSION['correo'])) {
+                echo ' <script src="/vistas/js/usuario/modal.js"></script>';
+            }  
+        ?>
         <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABnx9fjUPqca7ylNahJDGf18Fo0IQEQ0s&callback=initMap">
         </script>
         <script src="/vistas/js/usuario/map.js"></script>
-        <?php  
-        if (!isset( $_SESSION['correo'])) {
-            echo ' <script src="/vistas/js/usuario/modal.js"></script>';
-        }  
-        ?>
-        <!--JQuery validator plugin-->
-        <script type="text/javascript" src="/vistas/js/jquery.validate.min.js"></script>
-        <script type="text/javascript" src="/vistas/js/additional-methods.min.js"></script>
     </body>
 </html>

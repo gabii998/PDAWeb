@@ -28,7 +28,8 @@ $(function(){
                         email:true
                     },
                     dni:{
-                        required:true
+                        required:true,
+                        minlength: 8
                     },
                     registroContrasena:{
                         required:true
@@ -57,7 +58,8 @@ $(function(){
                         email:"No parece un correo válido"
                     },
                     dni:{
-                        required:"DNI requerido"
+                        required:"DNI requerido",
+                        minlength:"Un DNI válido tiene más de 8 caracteres"
                     },
                     registroContrasena:{
                         required:"Contrasena requerida"
