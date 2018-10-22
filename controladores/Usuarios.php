@@ -37,5 +37,14 @@ class ControladorUsuarios{
         $perfil=new PerfilUsuario($nombre,$apellido,$fechaNacimiento,$telefono);
         echo $dao->completarPerfil($perfil);
     }
+    public static function servirVistaRegistro(){
+        if($_SESSION['estado'] != "logueado"){
+            require SITE_ROOT.'/vistas/Registro.php';
+        }else{
+            $titulo="Registro";
+            $mensaje="Ya estás registrado,no puedes entrar aquí";
+            require SITE_ROOT.'/vistas/Error.php';
+        }
+    }
      
 }

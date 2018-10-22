@@ -3,6 +3,7 @@
 session_start();
 include __DIR__ . '/controladores/Comercios.php';
 include __DIR__ . '/controladores/Usuarios.php';
+include __DIR__ . '/controladores/Mapa.php';
 //Setear en 1 para depurar errores
 ini_set('display_errors', 0);
 $request = $_SERVER['REDIRECT_URL'];//Valor de la url
@@ -15,21 +16,19 @@ switch ($request) {
         require __DIR__ . '/vistas/index.php';
         break;
     case '/Mapa' :
-        require __DIR__ .'/vistas/Mapa.php';
+        ControladorMapa::servirVista();
         break;
     case '/Registro' :
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-            require __DIR__ .'/vistas/Registro.php';
+            ControladorUsuarios::servirVistaRegistro();
             }
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo ControladorUsuarios::registrar($_POST);
-            //header("location:/");
         }
         break;
     case '/Comercios':
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-        //ControladorComercios::obtenerComercios();
-        echo $_GET['id'];
+            ControladorComercios::servirVista();
         }
         break;
     case '/Login':

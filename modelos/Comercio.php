@@ -3,6 +3,8 @@ class Comercio{
     private $nombre;
     private $latitud;
     private $longitud;
+    private $descripcion;
+    private $sitio;
 
     public function __construct($nombre,$latitud,$longitud){
         $this->nombre=$nombre;
