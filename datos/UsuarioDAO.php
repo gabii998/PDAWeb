@@ -31,8 +31,9 @@ class UsuarioDAO{
         $email=$usuario->getEmail();
         $contrasena=$usuario->getContrasena();
         $dni=$usuario->getDni();
-        $contrasena=hash('sha512',$contrasena);
-        
+        $contrasena= password_hash($contrasena, PASSWORD_ARGON2I);       
+         //  $contrasena=hash('sha512',$contrasena);
+       
         $operacion="INSERT INTO Usuarios (email,pass,UsuariosInfo_dni) VALUES(?,?,?)";
         $sentencia=$conexion->prepare($operacion);
         $sentencia->bind_param("sss",$email,$contrasena,$dni);
@@ -40,6 +41,7 @@ class UsuarioDAO{
             $json['estado']="registrado";
         }else{
             $json['estado']=$conexion->error;
+            alert("error");
             //die ($conexion->error);
         }
         echo json_encode($json);       
@@ -56,8 +58,7 @@ class UsuarioDAO{
         if($sentencia->execute()){
             $resultado = $sentencia->get_result();
                 $fila=$resultado->fetch_assoc();
-                $passHash=hash('sha512',$password);
-                if($fila['pass'] == $passHash){
+                if(password_verify($password, $fila['pass'])){
                     $json['estado']="logueado";
                     $json['correo']=$email;
                 }else{

@@ -5,7 +5,7 @@ include __DIR__ . '/controladores/Comercios.php';
 include __DIR__ . '/controladores/Usuarios.php';
 include __DIR__ . '/controladores/Mapa.php';
 //Setear en 1 para depurar errores
-ini_set('display_errors', 0);
+ini_set('display_errors', 1);
 $request = $_SERVER['REDIRECT_URL'];//Valor de la url
 
 switch ($request) {
