@@ -55,7 +55,7 @@
                             <label for="defaultForm-email">Ubicación</label>
                         </div>
                         
-                        <button id="localizar" class="btn"  style="background: #720293" onclick="codeAddress()">Localizar</button>
+                        <button id="localizar" class="btn" type="button"  style="background: #720293" onclick="codeAddress()">Localizar</button>
 
                         <div id="mapa"></div>
                             <span  style="display:none" id="x"></span>
