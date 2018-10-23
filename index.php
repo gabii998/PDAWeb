@@ -46,6 +46,9 @@ switch ($request) {
     case '/Acerca':
         require __DIR__ . '/vistas/About.php';
         break;
+     case '/NuevoComercio':
+        require __DIR__ . '/vistas/NuevoComercio.php';
+        break;
     default:
         echo'<h1>Página no encontrada</h1>';
         break;

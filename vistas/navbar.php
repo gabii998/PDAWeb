@@ -16,6 +16,9 @@ include_once("LoginModal.php") ?>
     <li class="nav-item active">
       <a class="nav-link" href="Acerca">Acerca de PDA</a>
     </li>
+      <li class="nav-item active">
+          <a class="nav-link" href="NuevoComercio">Postular mi local</a>
+    </li>
   </ul>
 
   <ul class="navbar-nav ml-auto">
