@@ -21,7 +21,7 @@
             <div class="col mx-auto">
                 <img src="https://mdbootstrap.com/img/Others/documentation/img%20(75)-mini.jpg" class="img-fluid" alt="Fotografía del comercio">
             </div>
-            <div class="col-md-6 pt-4">
+            <div class="col-md-6 col-lg-7 pt-4">
                 <h5 id="comercioNombre">Nombre:</h5>
                 <h5 id="comercioSitio">Página Web:</h5>
                 <h5 id="comercioDescripcion">Descripción:</h5>
