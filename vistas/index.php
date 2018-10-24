@@ -26,22 +26,36 @@
     </div>
   </div>
 </div>
-<div class="container pt-5">
-<div class="row">
+<div class="container ">
+<div class="row pt-5">
   <div class="col-1"></div>
   <div class="col-5">
-    <h5 style="color: #720293"><i class="fa fa-support"></i><strong> Postulá tu comercio como Punto de Apoyo</strong></h5>
+    <h5 style="color: #720293"><i class="fa fa-support"></i><strong> Postulá tu comercio</strong></h5>
     <p>Postulá tu comercio para que forme parte de la red de Punto de Apoyo!
     Una vez que lo postules, formará parte de una lista para que los usuarios verifiquen
     su existencia.</p>
   </div>
   <div class="col-5">
-    <h5 style="color: #720293"><i class="fa fa-comment"></i><strong> Recomendá la app a tus amigos y familiares</strong></h5
+    <h5 style="color: #720293"><i class="fa fa-comment"></i><strong> Recomendá la app</strong></h5
     <p>Recomendando la aplicación haces que la comunidad en torno a ella crezca, y por ende 
-    que aumenten los puntos de apoyo disponibles.Contamos con aplicaciones para IOs y Android.</p>
+    que aumenten los puntos de apoyo disponibles.Contamos con aplicaciones para IOS y Android.</p>
   </div>
   <div class="col-1"></div>
 </div>
+  <div class="row pt-5 pb-5">
+    <div class="col-1"></div>
+    <div class="col-5">
+      <h5 style="color: #720293"><i class="fa fa-thumbs-up"></i><strong> Si tienes alguna sugerencia, hazla saber</strong></h5>
+      <p>Estamos abiertos a cambios y sugerencias que ayuden a mejorar la utilidad de plataforma,
+      asi que si tienes alguna idea haznosla saber, te lo agradeceremos.</p>
+    </div>
+    <div class="col-5">
+      <h5 style="color: #720293"><i class="fa fa-question-circle"></i><strong> Preguntas frecuentes</strong></h5>
+      <p>Si tienes alguna duda, puedes ir a nuestra área de preguntas frecuentes. En caso de que tu pregunta
+      no se encuentre allí, puedes enviarnos tu consulta a nuestras redes sociales, se te responderá a la brevedad.</p>
+    </div>
+    <div class="col-1"></div>
+  </div>
 </div>
 
 <!-- Jumbotron -->
