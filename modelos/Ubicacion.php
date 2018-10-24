@@ -1,6 +1,9 @@
 <?php
-//Ubicaciones enviadas por los usuarios en forma de alerta
 class Ubicacion{
+    /*
+    Esta clase será utilizada por las alertas y por los comercios.En la base de datos
+    tendrá una tabla aparte
+    */
     private $id;
     private $latitud;
     private $longitud;

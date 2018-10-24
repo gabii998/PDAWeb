@@ -17,7 +17,7 @@
     <?php include_once("navbar.php"); ?>
     <div class="container" id="contenido">
     <form id="formRegistro">
-        <div class="row" id="mensaje"></div>
+        <div class="row" id="mensajeRegistro"></div>
         <div class="row py-5" >
             <div class="col-md">
                     <div class="md-form mb-5">

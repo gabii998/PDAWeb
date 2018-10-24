@@ -71,7 +71,7 @@ $(function(){
                 Error al iniciar sesión
             </div>
             `;
-            $("#mensaje").replaceWith(contenido);
+            $("#mensajeLogin").replaceWith(contenido);
         };
 
         app.init();

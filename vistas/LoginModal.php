@@ -7,7 +7,7 @@
             </div>
             
             <div class="modal-body mx-3">
-            <div id="mensaje"></div>
+            <div id="mensajeLogin"></div>
             <form id="loginForm" >
                 <div class="md-form mb-5">
                     <i class="fa fa-envelope prefix grey-text"></i>

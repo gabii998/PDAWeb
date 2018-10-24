@@ -122,7 +122,7 @@ $(function(){
                 Al parecer ya te habías registrado con anterioridad
             </div>
             `;
-            $("#mensaje").replaceWith(contenido);
+            $("#mensajeRegistro").replaceWith(contenido);
         }
         app.completarPerfil = function(){
             var contenido=`

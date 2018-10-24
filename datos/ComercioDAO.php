@@ -1,7 +1,12 @@
 <?php
-//include __DIR__."/../constantes.php";
 include SITE_ROOT."/modelos/Comercio.php";
 include "DbHelper.php";
+
+/* La tabla comercios contendrá los siguientes elementos:
+Nombre: Un nombre alfanumérico,
+Ubicacion: Será un objeto de tipo ubicación,
+Votos: Para que se cuente como un PDA oficial, deberá tener más de 15 votos
+*/
 
 class ComercioDAO{
     private $tableName="Comercios";
