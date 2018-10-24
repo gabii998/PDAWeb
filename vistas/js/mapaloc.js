@@ -4,6 +4,7 @@ $(function () {
   (function (app) {
  
     var map, geocoder;
+    var markers=[];
     app.init = function () {
       //Esta función pone en marcha todo
       app.iniciarMapa();
@@ -11,7 +12,10 @@ $(function () {
 
     };
     app.agregarMarker=function(location,direccionmarker,latmarker,longmarker){
-        var marker = new google.maps.Marker({
+      for (var i = 0; i < markers.length; i++) {
+        markers[i].setMap(null);
+      }
+         var marker = new google.maps.Marker({
             map: map,
             position: location
           });
@@ -19,7 +23,7 @@ $(function () {
             content: '' + direccionmarker + '<br> Latitud: ' + latmarker + '<br> Longitud: ' + longmarker
           });
           infowindow.open(map, marker)
-       
+       markers.push(marker);
     };
     app.bindings = function(){
       //Realiza el bindeo de los botones
