@@ -50,6 +50,9 @@ switch ($request) {
         require __DIR__ . '/vistas/NuevoComercio.php';
         break;
     default:
-        echo'<h1>Página no encontrada</h1>';
+    $titulo="Pagina no encontrada";
+    $mensaje="Lo sentimos,la página solicitada no fue encontrada";
+        require __DIR__ . '/vistas/Error.php';
+        //echo'<h1>Página no encontrada</h1>';
         break;
 }

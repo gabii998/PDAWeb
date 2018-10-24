@@ -41,17 +41,17 @@
                     <div class="col-md order-2" >
                         <div class="md-form mb-5">
                             <i class="fa fa-address-card prefix grey-text"></i>
-                            <input type="text" id="nombreLocal" name="NombreLocal" class="form-control">
+                            <input required type="text" id="nombreLocal" name="NombreLocal" class="form-control">
                             <label for="defaultForm-email">Nombre</label>
                         </div>
                         <div class="md-form mb-5">
-                            <i class="fa fa-address-book prefix grey-text"></i>
-                            <input id="address" type="text" name="UbicacionLocal" class="form-control"  >
+                            <i class="fa fa-location-arrow prefix grey-text"></i>
+                            <input required id="ubicacionLocal" type="text" name="UbicacionLocal" class="form-control"  >
                             <label for="defaultForm-email">Ubicación</label>
                         </div>
                         <div class="row">
                             <div class="col text-center">
-                                <button id="localizar" type="button" class="btn"  style="background: #720293">Localizar</button>
+                                <button id="localizar" name="localizar" type="button" class="btn"  style="background: #720293" disabled>Localizar</button>
                             </div>
                             <div class="col text-center">
                                 <button id="registroSubmit" class="btn  mx-auto" id="registrarSubmit" style="background: #720293">Registrar</button>

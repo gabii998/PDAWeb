@@ -12,9 +12,17 @@ $(function () {
 
     app.bindings = function(){
       //Realiza el bindeo de los botones
+      $( "#ubicacionLocal" ).keydown(function() {
+        if($("#ubicacionLocal").val().trim().length >=0){
+          //No activa el boton localizar hasta que no se complete el campo
+          $("#localizar").removeAttr("disabled");
+        }
+      });
       $("#localizar").click(function(e){
         app.codeAddress(map,geocoder);
       }
+      
+      
       )};
 
     app.iniciarMapa = function () {
@@ -33,7 +41,7 @@ $(function () {
 
     app.codeAddress = function () {
       //Codifica la direccion
-      var address = document.getElementById('address').value;
+      var address = document.getElementById('ubicacionLocal').value;
       // Función completa de Geocoding
       geocoder.geocode({
         'address': address
