@@ -26,6 +26,24 @@
     </div>
   </div>
 </div>
+<div class="container pt-5">
+<div class="row">
+  <div class="col-1"></div>
+  <div class="col-5">
+    <h5 style="color: #720293"><i class="fa fa-support"></i><strong> Postulá tu comercio como Punto de Apoyo</strong></h5>
+    <p>Postulá tu comercio para que forme parte de la red de Punto de Apoyo!
+    Una vez que lo postules, formará parte de una lista para que los usuarios verifiquen
+    su existencia.</p>
+  </div>
+  <div class="col-5">
+    <h5 style="color: #720293"><i class="fa fa-comment"></i><strong> Recomendá la app a tus amigos y familiares</strong></h5
+    <p>Recomendando la aplicación haces que la comunidad en torno a ella crezca, y por ende 
+    que aumenten los puntos de apoyo disponibles.Contamos con aplicaciones para IOs y Android.</p>
+  </div>
+  <div class="col-1"></div>
+</div>
+</div>
+
 <!-- Jumbotron -->
     <?php
       include_once("scriptsIncluidos.html");
