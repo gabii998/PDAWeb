@@ -2,6 +2,7 @@ $(function () {
   var mapaLoc = {};
 
   (function (app) {
+ 
     var map, geocoder;
     app.init = function () {
       //Esta función pone en marcha todo
@@ -9,7 +10,17 @@ $(function () {
       app.bindings();
 
     };
-
+    app.agregarMarker=function(location,direccionmarker,latmarker,longmarker){
+        var marker = new google.maps.Marker({
+            map: map,
+            position: location
+          });
+         infowindow = new google.maps.InfoWindow({
+            content: '' + direccionmarker + '<br> Latitud: ' + latmarker + '<br> Longitud: ' + longmarker
+          });
+          infowindow.open(map, marker)
+       
+    };
     app.bindings = function(){
       //Realiza el bindeo de los botones
       $( "#ubicacionLocal" ).keydown(function() {
@@ -40,6 +51,7 @@ $(function () {
     };
 
     app.codeAddress = function () {
+      
       //Codifica la direccion
       var address = document.getElementById('ubicacionLocal').value;
       // Función completa de Geocoding
@@ -52,16 +64,8 @@ $(function () {
           $("#y").html(results[0].geometry.location.lng().toFixed(6));
           map.setCenter(results[0].geometry.location);
           $("#direccion").html(results[0].formatted_address);
-          var marker = new google.maps.Marker({
-            map: map,
-            position: results[0].geometry.location
-          });
-          //podemos personalisar el toltip aqui
-          infowindow = new google.maps.InfoWindow({
-            content: '' + results[0].formatted_address + '<br> Latitud: ' + results[0].geometry.location.lat().toFixed(6) + '<br> Longitud: ' + results[0].geometry.location.lng().toFixed(6)
-          });
-          infowindow.open(map, marker)
-        }
+          app.agregarMarker(results[0].geometry.location,results[0].formatted_address,results[0].geometry.location.lat().toFixed(6),results[0].geometry.location.lng().toFixed(6));
+      }
         // error
         else {
           if (status == 'ZERO_RESULTS') { alert('NO SE ENCONTRO LA UBICACION') } else {
