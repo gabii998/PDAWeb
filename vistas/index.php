@@ -14,7 +14,7 @@
         <?php include_once("navbar.php");
         ?>
         <!-- Jumbotron -->
-        <div class="card card-image" style="background-image: url(/vistas/img/back.png); height:91%">
+        <div class="card card-image mb-5" style="background-image: url(/vistas/img/back.png); height:91%">
             <div class="text-white h-100 text-center rgba-stylish-strong py-5 px-4">
                 <div class="pt-1">
                     <!-- Content -->
@@ -26,7 +26,7 @@
                 </div>
             </div>
         </div>
-        <div class="container text-center">
+        <div class="container mb-5 text-center">
             <div class="row pt-5">
                 <div class="col-md-1"></div>
                 <div class="col-md-5">

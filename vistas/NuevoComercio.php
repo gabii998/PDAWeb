@@ -25,7 +25,7 @@
                 <div class="col text-center mt-5">
                 
 
-                    <h1 class="font-weight-bold">Postulá aquí tu local</h1>
+                    <h1 class="font-weight-bold">Postulá tu local</h1>
 
 
 
@@ -41,12 +41,12 @@
                     <div class="col-md order-2" >
                         <div class="md-form mb-5">
                             <i class="fa fa-address-card prefix grey-text"></i>
-                            <input required type="text" id="nombreLocal" name="NombreLocal" class="form-control">
+                            <input required type="text" id="nombreLocal" name="NombreLocal" placeholder="Local de Pepito" class="form-control">
                             <label for="defaultForm-email">Nombre</label>
                         </div>
                         <div class="md-form mb-5">
                             <i class="fa fa-location-arrow prefix grey-text"></i>
-                            <input required id="ubicacionLocal" type="text" name="UbicacionLocal" class="form-control"  >
+                            <input required id="ubicacionLocal" type="text" name="UbicacionLocal" placeholder="Calle 123,Rivadavia,Mendoza" class="form-control"  >
                             <label for="defaultForm-email">Ubicación</label>
                         </div>
                         <div class="row">
