@@ -26,39 +26,39 @@
                 </div>
             </div>
         </div>
-        <div class="container ">
+        <div class="container text-center">
             <div class="row pt-5">
-                <div class="col-1"></div>
-                <div class="col-5">
+                <div class="col-md-1"></div>
+                <div class="col-md-5">
                     <h5 style="color: #720293"><i class="fa fa-support"></i><strong> Postulá tu comercio</strong></h5>
                     <p>Postulá tu comercio para que forme parte de la red de Punto de Apoyo!
                         Una vez que lo postules, formará parte de una lista para que los usuarios verifiquen
                         su existencia.</p>
                     <a class="btn white text-capitalize" href="NuevoComercio" style="color: #720293"></i>Ir allá</a>
                 </div>
-                <div class="col-5">
+                <div class="col-md-5">
                     <h5 style="color: #720293"><i class="fa fa-comment"></i><strong> Recomendá la app</strong></h5
                     <p>Recomendando la aplicación haces que la comunidad en torno a ella crezca, y por ende 
                         que aumenten los puntos de apoyo disponibles.Contamos con aplicaciones para IOS y Android.</p>
                 </div>
-                <div class="col-1"></div>
+                <div class="col-md-1"></div>
             </div>
             <div class="row pt-5 pb-5">
-                <div class="col-1"></div>
-                <div class="col-5">
+                <div class="col-md-1"></div>
+                <div class="col-md-5">
                     <h5 style="color: #720293"><i class="fa fa-thumbs-up"></i><strong> Si tienes alguna sugerencia, hazla saber</strong></h5>
                     <p>Estamos abiertos a cambios y sugerencias que ayuden a mejorar la utilidad de plataforma,
                         asi que si tienes alguna idea haznosla saber, te lo agradeceremos.</p>
                     <a class="btn white text-capitalize" data-toggle="modal" data-target="#modalSugerencias" style="color: #720293"></i>Nueva sugerencia</a>
                 </div>
 
-                <div class="col-5">
+                <div class="col-md-5">
                     <h5 style="color: #720293"><i class="fa fa-question-circle"></i><strong> Preguntas frecuentes</strong></h5>
                     <p>Si tienes alguna duda, puedes ir a nuestra área de preguntas frecuentes. En caso de que tu pregunta
                         no se encuentre allí, puedes enviarnos tu consulta a nuestras redes sociales, se te responderá a la brevedad.</p>
                     <a class="btn white text-capitalize" href="#" style="color: #720293"></i>Preguntas frecuentes</a>
                 </div>
-                <div class="col-1"></div>
+                <div class="col-md-1"></div>
             </div>
         </div>
 
