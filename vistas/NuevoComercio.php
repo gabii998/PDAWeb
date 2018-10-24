@@ -22,17 +22,13 @@
         ?>
         <div class="container">
             <div class="row">
-                <div class="col">
-                </div>
-                <div class="col-6">
-                    <br>
+                <div class="col text-center mt-5">
+                
 
                     <h1 class="font-weight-bold">Postulá aquí tu local</h1>
 
 
-                </div>
 
-                <div class="col">
 
                 </div>
 
@@ -42,8 +38,7 @@
             <form id="formRegistro">
                 <div class="row" id="mensaje"></div>
                 <div class="row py-5" >
-                    <div class="col-md">
-                        <h3 class="font-weight-bold">Datos del local</h3>
+                    <div class="col-md order-2" >
                         <div class="md-form mb-5">
                             <i class="fa fa-address-card prefix grey-text"></i>
                             <input type="text" id="nombreLocal" name="NombreLocal" class="form-control">
@@ -54,37 +49,17 @@
                             <input id="address" type="text" name="UbicacionLocal" class="form-control"  >
                             <label for="defaultForm-email">Ubicación</label>
                         </div>
+                        <div class="row">
+                            <div class="col text-center">
+                                <button id="localizar" type="button" class="btn"  style="background: #720293">Localizar</button>
+                            </div>
+                            <div class="col text-center">
+                                <button id="registroSubmit" class="btn  mx-auto" id="registrarSubmit" style="background: #720293">Registrar</button>
+                            </div>
+                            
+                        </div>
                         
-                        <button id="localizar" type="button" class="btn"  style="background: #720293">Localizar</button>
 
-                        <div id="mapa"></div>
-                            <span  style="display:none" id="x"></span>
-                           <span  style="display:none" id="y"></span>
-                           <span  id="direccion"  style="display:none"></span>
-
-                    </div>
-                    <div class="col-md">
-                        <h3 class="font-weight-bold">Tus datos</h3>
-                        <div class="md-form mb-5">
-                            <i class="fa fa-address-card prefix grey-text"></i>
-                            <input type="text" id="nombrePersona" name="nombrePersona" class="form-control">
-                            <label for="defaultForm-email">Nombre</label>
-                        </div>
-                        <div class="md-form mb-5">
-                            <i class="fa fa-address-card prefix grey-text"></i>
-                            <input type="text" id="apellidoPersona" name="apellidoPersona" class="form-control">
-                            <label for="defaultForm-email">Apellido</label>
-                        </div>
-                        <div class="md-form mb-5">
-                            <i class="fa fa-phone prefix grey-text"></i>
-                            <input type="number" id="telefonoPersona" name="telefonoPersona" class="form-control">
-                            <label for="defaultForm-email">Teléfono</label>
-                        </div>
-                        <div class="md-form mb-5">
-                            <i class="fa fa-envelope prefix grey-text"></i>
-                            <input type="email" id="correoPersona" name="correoPersona" class="form-control">
-                            <label for="defaultForm-email">Correo Electrónico</label>
-                        </div>
                         <div class="row  justify-content-center">
                             <div class="form-check">
                                 <input required class="form-check-input filled-in" type="checkbox" name="checkbox" id="checkbox">
@@ -94,9 +69,18 @@
                         </div>
                         <div class="row  justify-content-center">
                             <div class="text-center mt-2">
-                                <button id="registroSubmit" class="btn  mx-auto" id="registrarSubmit" style="background: #720293">Registrar</button>
+                                
                             </div>
                         </div>
+
+
+                    </div>
+                    <div class="col-md order-1" style="height: 300px">
+                        <div id="mapa"></div>
+                        <span  style="display:none" id="x"></span>
+                        <span  style="display:none" id="y"></span>
+                        <span  id="direccion"  style="display:none"></span>
+
                     </div>
                 </div>
 
