@@ -47,7 +47,12 @@ switch ($request) {
         require __DIR__ . '/vistas/About.php';
         break;
      case '/NuevoComercio':
-        require __DIR__ . '/vistas/NuevoComercio.php';
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            ControladorComercios::agregarLugar($_POST);
+        }
+        if($_SERVER['REQUEST_METHOD'] === 'GET'){
+            require __DIR__ . '/vistas/NuevoComercio.php';
+        }
         break;
     case '/NCom':
     $parms['latitud']=111;

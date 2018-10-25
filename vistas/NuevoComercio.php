@@ -54,7 +54,7 @@
                                 <button id="localizar" name="localizar" type="button" class="btn"  style="background: #720293" disabled>Localizar</button>
                             </div>
                             <div class="col text-center">
-                                <button id="registroSubmit" class="btn  mx-auto" id="registrarSubmit" style="background: #720293">Registrar</button>
+                                <button type="button" id="registroSubmit" class="btn  mx-auto" style="background: #720293">Registrar</button>
                             </div>
                             
                         </div>

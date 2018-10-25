@@ -38,7 +38,7 @@ class ComercioDAO implements Querys{
         $sentencia=$DbHelper->ejecutarQuery(Querys::INSERTAR_COMERCIO,(array)$comercio);
         if($sentencia != "error"){
             $DbHelper->confirmarCambio();
-            return "agregado";
+            return json_encode($json['estado']="agregado");
         }else{
             return "error";
         }
