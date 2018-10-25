@@ -1,11 +1,28 @@
 <?php
-include SERVER."/modelos/Ubicacion.php";
-include "DbHelper.php";
+//include SERVER."/modelos/Ubicacion.php";
+include_once "DbHelper.php";
+include_once "Querys.php";
 
-class UbicacionDAO{
+class UbicacionDAO implements Querys{
+    
 
-    private function agregar(Ubicacion $ubicacion){
-        $db=new DbHelper();
+    public function crearTablaUbicacion(){
+        $DbHelper=new DbHelper();
+        $sentencia=$DbHelper->ejecutarQuery(Querys::CREAR_TABLA_UBICACION);
+    }
+
+    public function agregar(Ubicacion $ubicacion){
+        $this->crearTablaUbicacion();
+        $DbHelper=new DbHelper();
+        $sentencia=$DbHelper->ejecutarQuery(Querys::INSERTAR_UBICACION,(array)$ubicacion);
+        if($sentencia != "error"){
+            $id= $DbHelper->obtenerUltimoId();
+            $DbHelper->confirmarCambio();
+            return $id;
+        }else{
+            return "error";
+        }
+       /* $db=new DbHelper();
         $conexion=$db->conectar();
         $id=$ubicacion->getId();
         $latitud=$ubicacion->getLatitud();
@@ -17,7 +34,7 @@ class UbicacionDAO{
             echo $id;
         }else{
             echo"Error";
-        }
+        }*/
     }
     private function obtener($id){
         $db=new DbHelper();

@@ -1,6 +1,9 @@
 <?php
 include_once __DIR__."/../constantes.php";
 include  SITE_ROOT.'/datos/ComercioDAO.php';
+include  SITE_ROOT.'/datos/UbicacionDAO.php';
+include_once  SITE_ROOT.'/modelos/Ubicacion.php';
+include_once  SITE_ROOT.'/modelos/Comercio.php';
  class ControladorComercios{
       
       /*public static function obtenerComercios(){
@@ -10,7 +13,11 @@ include  SITE_ROOT.'/datos/ComercioDAO.php';
       public static function servirVista(){
             require SITE_ROOT. '/vistas/Comercio.php';
       }
-      public function agregarLugar(){
-
+      public static function agregarLugar($parametrosPost){
+            $ubicacionDao=new UbicacionDAO();
+            $ubicacion=new Ubicacion(null,$parametrosPost['latitud'],$parametrosPost['longitud']);
+            $id=$ubicacionDao->agregar($ubicacion);
+            $comercio=new Comercio($parametrosPost['nombre'],$parametrosPost['email'],$id);
+            echo ComercioDAO::agregar($comercio);
       }
 }

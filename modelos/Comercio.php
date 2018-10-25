@@ -1,33 +1,35 @@
 <?php
 class Comercio{
     private $nombre;
-    private $latitud;
-    private $longitud;
-    private $descripcion;
-    private $sitio;
+    private $emailDueno;
+    private $idUbicacion;
 
-    public function __construct($nombre,$latitud,$longitud){
-        $this->nombre=$nombre;
-        $this->latitud=$latitud;
-        $this->longitud=$longitud;
+    function __construct($nombre, $emailDueno, $idUbicacion) {
+        $this->nombre = $nombre;
+        $this->emailDueno = $emailDueno;
+        $this->idUbicacion = $idUbicacion;
     }
-    public function setNombre($nombre){
-        $this->nombre=$nombre;
-    }
-    public function setLatitud($latitud){
-        $this->latitud=$latitud;
-    }
-    public function setLongitud($longitud){
-        $this->longitud=$longitud;
-    }
-    public function getNombre(){
+    function getNombre() {
         return $this->nombre;
     }
-    public function getLatitud(){
-        return $this->latitud;
+
+    function getEmailDueno() {
+        return $this->emailDueno;
     }
-    public function getLongitud(){
-        return $this->longitud;
+
+    function getIdUbicacion() {
+        return $this->idUbicacion;
     }
-    
+
+    function setNombre($nombre) {
+        $this->nombre = $nombre;
+    }
+
+    function setEmailDueno($emailDueno) {
+        $this->emailDueno = $emailDueno;
+    }
+
+    function setIdUbicacion($idUbicacion) {
+        $this->idUbicacion = $idUbicacion;
+    }    
 }

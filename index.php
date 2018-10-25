@@ -49,6 +49,14 @@ switch ($request) {
      case '/NuevoComercio':
         require __DIR__ . '/vistas/NuevoComercio.php';
         break;
+    case '/NCom':
+    $parms['latitud']=111;
+    $parms['longitud']=222;
+    $parms['email']="prueba@prueba.com";
+    $parms['nombre']="Nombrando";
+
+        $respuesta=ControladorComercios::agregarLugar($parms);
+        break;
     default:
     $titulo="Pagina no encontrada";
     $mensaje="Lo sentimos,la página solicitada no fue encontrada";
