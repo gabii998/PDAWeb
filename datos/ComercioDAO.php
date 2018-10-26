@@ -30,9 +30,9 @@ class ComercioDAO implements Querys{
 
     public function obtenerComercio($id){
         //No se usa una sentencia preparada debido a que no utilizamos parámetros
-        $array['id']=$id;
+        //$array['id']=$id;
         $DbHelper=new DbHelper();
-        $sentencia=$DbHelper->ejecutarQuery(Querys::TRAER_COMERCIOS,$array);
+        $sentencia=$DbHelper->ejecutarQuery(Querys::TRAER_COMERCIO,$id);
         if($sentencia != "error"){
             $DbHelper->confirmarCambio();
             return $sentencia->fetch();

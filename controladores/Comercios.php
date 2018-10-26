@@ -17,7 +17,7 @@ include_once  SITE_ROOT.'/modelos/Comercio.php';
             echo json_encode(ComercioDAO::obtenerTodos());
       }
       public static function traerLugar($parametros){
-            echo json_encode(ComercioDAO::obtenerComercio($parametros['id']));
+            echo json_encode(ComercioDAO::obtenerComercio($parametros));
 
       }
 }
