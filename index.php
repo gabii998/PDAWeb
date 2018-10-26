@@ -31,6 +31,11 @@ switch ($request) {
             ControladorComercios::servirVista();
         }
         break;
+        case '/GetComercios':
+        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+            ControladorComercios::traerLugares();
+        }
+        break;
     case '/Login':
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
             $respuesta=ControladorUsuarios::loguear($_POST);

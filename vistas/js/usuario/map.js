@@ -34,23 +34,22 @@ function initMap() {
   function getPlaces(mapa){
    //Funcion para obtener y dibujar los puntos en el mapa
     $.ajax({
-        url: window.location.origin+"/Comercios",
+        url: window.location.origin+"/GetComercios",
         dataType: "JSON",
         success: function(json){
-            var obj= jQuery.parseJSON(JSON.stringify(json));
-            var comercios= obj.Comercios;
+            console.log(json)
             var image=window.location.origin+"/vistas/img/ic_pda.png"
             var infoWindow= new google.maps.InfoWindow()
-            for(var i=0;i<comercios.length;i++){
-                var lat=comercios[i].latitud
-                var lng=comercios[i].longitud
+            for(var i=0;i< json.length;i++){
+                var lat=json[i].latitud;
+                var lng=json[i].longitud;
                 var marker = new google.maps.Marker({position: new google.maps.LatLng(lat,lng),
                      map: mapa, 
-                     title: comercios[i].nombre,
+                     title: json[i].nombre,
                     icon: image});
                     google.maps.event.addListener(marker, 'click', (function(marker, i) {
                         return function() {
-                            infoWindow.setContent(comercios[i].nombre);
+                            infoWindow.setContent(json[i].nombre);
                             if(infoWindow.getMap()){
                                 infoWindow.close();
                             }else{//Si no esta abierta,getMap() es nulo

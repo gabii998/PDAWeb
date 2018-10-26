@@ -18,17 +18,14 @@ class ComercioDAO implements Querys{
 
     public function obtener(){
         //No se usa una sentencia preparada debido a que no utilizamos parámetros
-        $json=array();
-        $db=new DbHelper();
-        $conexion=$db->conectar();
-        $consulta="SELECT nombre,latitud,longitud from ".$this->tableName;
-        $resultado=mysqli_query($conexion,$consulta);
-
-        while($fila=mysqli_fetch_assoc($resultado)){
-            $json['Comercios'][]=$fila;
-        }   
-        mysqli_close($conexion);
-        echo json_encode($json);
+        $DbHelper=new DbHelper();
+        $sentencia=$DbHelper->ejecutarQuery(Querys::TRAER_COMERCIOS);
+        if($sentencia != "error"){
+            $DbHelper->confirmarCambio();
+            return $sentencia->fetchAll();
+        }else{
+            return json_encode($json['estado']="error");
+        }
     }
 
 
