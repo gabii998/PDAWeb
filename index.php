@@ -56,7 +56,7 @@ switch ($request) {
         break;
     case '/NCom':
     $parms['latitud']=111;
-    $parms['longitud']=222;
+    $parms['longitud']=2222;
     $parms['email']="prueba@prueba.com";
     $parms['nombre']="Nombrando";
 

@@ -43,7 +43,6 @@ $(function () {
       });
 
       $("#registroSubmit").click(function (e) {
-        console.log("hola")
         var datos={};
         datos['latitud']= $("#x").text();
         datos['longitud']=$("#y").text();
@@ -84,6 +83,7 @@ $(function () {
           $("#y").html(results[0].geometry.location.lng().toFixed(6));
           map.setCenter(results[0].geometry.location);
           $("#direccion").html(results[0].formatted_address);
+          console.log(results[0].formatted_address);
           app.agregarMarker(results[0].geometry.location, results[0].formatted_address, results[0].geometry.location.lat().toFixed(6), results[0].geometry.location.lng().toFixed(6));
         }
         // error
@@ -102,9 +102,13 @@ $(function () {
         dataType:"JSON",
         data: datos,
         success:function(datos){
+          var mensaje;
             if(datos=="agregado"){
-              app.imprimirMensaje();
+              mensaje="Comercio agregado correctamente";
+            }else{
+              mensaje="El comercio ya está en la base de datos";
             }
+            app.imprimirMensaje(mensaje);
         },
         error: function(){
 
@@ -114,13 +118,12 @@ $(function () {
     };
 
 
-    app.imprimirMensaje = function (){
+    app.imprimirMensaje = function (mensaje){
       var contenido=`
       <div class="row">
         <div class="col-md-3"></div>
-        <div class="col-md-6">
-          <div class="alert alert-info" role="alert">
-            Comercio agregado correctamente
+        <div class="col-md-6 text-center">
+          <div class="alert alert-info" role="alert">`+mensaje+`
           </div>
         </div>
         <div class="col-md-3"></div>

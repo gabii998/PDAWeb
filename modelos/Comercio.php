@@ -2,12 +2,14 @@
 class Comercio{
     private $nombre;
     private $emailDueno;
-    private $idUbicacion;
+    private $latitud;
+    private $longitud;
 
-    function __construct($nombre, $emailDueno, $idUbicacion) {
+    function __construct($nombre, $emailDueno,  $latitud, $longitud) {
         $this->nombre = $nombre;
         $this->emailDueno = $emailDueno;
-        $this->idUbicacion = $idUbicacion;
+        $this->latitud = $latitud;
+        $this->longitud = $longitud;
     }
     function getNombre() {
         return $this->nombre;
@@ -21,6 +23,14 @@ class Comercio{
         return $this->idUbicacion;
     }
 
+    function getLatitud() {
+        return $this->latitud;
+    }
+
+    function getLongitud() {
+        return $this->longitud;
+    }
+
     function setNombre($nombre) {
         $this->nombre = $nombre;
     }
@@ -31,5 +41,16 @@ class Comercio{
 
     function setIdUbicacion($idUbicacion) {
         $this->idUbicacion = $idUbicacion;
-    }    
+    }
+
+    function setLatitud($latitud) {
+        $this->latitud = $latitud;
+    }
+
+    function setLongitud($longitud) {
+        $this->longitud = $longitud;
+    }
+
+
+
 }

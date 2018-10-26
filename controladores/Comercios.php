@@ -15,9 +15,9 @@ include_once  SITE_ROOT.'/modelos/Comercio.php';
       }
       public static function agregarLugar($parametrosPost){
             $ubicacionDao=new UbicacionDAO();
-            $ubicacion=new Ubicacion(null,$parametrosPost['latitud'],$parametrosPost['longitud']);
-            $id=$ubicacionDao->agregar($ubicacion);
-            $comercio=new Comercio($parametrosPost['nombre'],$parametrosPost['email'],$id);
+            //$ubicacion=new Ubicacion(null,$parametrosPost['latitud'],$parametrosPost['longitud']);
+            //$id=$ubicacionDao->agregar($ubicacion);
+            $comercio=new Comercio($parametrosPost['nombre'],$parametrosPost['email'],$parametrosPost['latitud'],$parametrosPost['longitud']);
             echo ComercioDAO::agregar($comercio);
       }
 }

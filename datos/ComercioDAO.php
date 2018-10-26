@@ -40,7 +40,7 @@ class ComercioDAO implements Querys{
             $DbHelper->confirmarCambio();
             return json_encode($json['estado']="agregado");
         }else{
-            return "error";
+            return json_encode($json['estado']="error");
         }
     }
 

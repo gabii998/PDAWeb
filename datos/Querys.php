@@ -42,22 +42,38 @@ const INSERTAR_UBICACION="INSERT INTO `PDA`.`Ubicacion`(id,latitud,longitud)VALU
 
 
 //Comercios
-const CREAR_TABLA_COMERCIOS="CREATE TABLE IF NOT EXISTS `PDA`.`Comercios` (
+/*const CREAR_TABLA_COMERCIOS="CREATE TABLE IF NOT EXISTS `PDA`.`Comercios` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(45) NULL,
+  `longitud` VARCHAR(200) NULL,
+  `latitud` VARCHAR(200) NULL,
   `Usuarios_email` VARCHAR(100) NOT NULL,
-  `Ubicacion_id` INT NOT NULL,
   PRIMARY KEY (`id`),
+  PRIMARY KEY (longitud,latitud),
   CONSTRAINT `fk_Comercios_Usuarios1`
     FOREIGN KEY (`Usuarios_email`)
-    REFERENCES `PDA`.`Usuarios` (`email`),
-  CONSTRAINT `fk_Comercios_Ubicacion1`
-    FOREIGN KEY (`Ubicacion_id`)
-    REFERENCES `PDA`.`Ubicacion` (`id`))
+    REFERENCES `PDA`.`Usuarios` (`email`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_spanish_ci";*/
+const CREAR_TABLA_COMERCIOS="CREATE TABLE IF NOT EXISTS `PDA`.`Comercios` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `nombre` VARCHAR(45) NULL,
+  `Usuarios_email` VARCHAR(100) NOT NULL,
+  `latitud` VARCHAR(45) NULL,
+  `longitud` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`latitud`, `longitud`),
+  KEY(`id`),
+  CONSTRAINT `fk_Comercios_Usuarios1`
+    FOREIGN KEY (`Usuarios_email`)
+    REFERENCES `PDA`.`Usuarios` (`email`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_spanish_ci";
-const INSERTAR_COMERCIO="INSERT INTO `PDA`.`Comercios`(nombre,Usuarios_email,Ubicacion_id)VALUES(?,?,?);";
 
+//const INSERTAR_COMERCIO="INSERT INTO `PDA`.`Comercios`(nombre,Usuarios_email,Ubicacion_id)VALUES(?,?,?);";
+const INSERTAR_COMERCIO="INSERT INTO `PDA`.`Comercios`(`nombre`,`Usuarios_email`,`latitud`,`longitud`)VALUES(?,?,?,?)";
 const TRAER_COMERCIOS="";
 }
