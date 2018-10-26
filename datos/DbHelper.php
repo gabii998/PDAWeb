@@ -7,7 +7,7 @@ class DbHelper implements Querys{
     public function __construct(){
         $this->crearBaseDeDatos();
         $this->conexion=new PDO("mysql:dbname=".DBNAME.";host=localhost",DBUSER,DBPASSWORD);
-       // $this->conexion->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+       $this->conexion->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
        //Habilitar la linea de arriba para depurar errores en la db
     }
 

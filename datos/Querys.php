@@ -76,4 +76,5 @@ COLLATE = utf8_spanish_ci";
 //const INSERTAR_COMERCIO="INSERT INTO `PDA`.`Comercios`(nombre,Usuarios_email,Ubicacion_id)VALUES(?,?,?);";
 const INSERTAR_COMERCIO="INSERT INTO `PDA`.`Comercios`(`nombre`,`Usuarios_email`,`latitud`,`longitud`)VALUES(?,?,?,?)";
 const TRAER_COMERCIOS="SELECT * FROM `PDA`.`Comercios`";
+const TRAER_COMERCIO="SELECT * FROM `PDA`.`Comercios` WERE id=?";
 }

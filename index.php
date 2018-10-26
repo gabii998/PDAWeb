@@ -26,12 +26,17 @@ switch ($request) {
             echo ControladorUsuarios::registrar($_POST);
         }
         break;
-    case '/Comercios':
+    case '/Comercio':
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             ControladorComercios::servirVista();
         }
         break;
-        case '/GetComercios':
+    case '/GetComercio':
+        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+            ControladorComercios::traerLugar($_GET);
+        }
+        break;
+    case '/GetComercios':
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             ControladorComercios::traerLugares();
         }
@@ -58,14 +63,6 @@ switch ($request) {
         if($_SERVER['REQUEST_METHOD'] === 'GET'){
             require __DIR__ . '/vistas/NuevoComercio.php';
         }
-        break;
-    case '/NCom':
-    $parms['latitud']=111;
-    $parms['longitud']=2222;
-    $parms['email']="prueba@prueba.com";
-    $parms['nombre']="Nombrando";
-
-        $respuesta=ControladorComercios::agregarLugar($parms);
         break;
     default:
     $titulo="Pagina no encontrada";

@@ -16,13 +16,26 @@ class ComercioDAO implements Querys{
         $sentencia=$DbHelper->ejecutarQuery(Querys::CREAR_TABLA_COMERCIOS);
     }
 
-    public function obtener(){
+    public function obtenerTodos(){
         //No se usa una sentencia preparada debido a que no utilizamos parámetros
         $DbHelper=new DbHelper();
         $sentencia=$DbHelper->ejecutarQuery(Querys::TRAER_COMERCIOS);
         if($sentencia != "error"){
             $DbHelper->confirmarCambio();
             return $sentencia->fetchAll();
+        }else{
+            return json_encode($json['estado']="error");
+        }
+    }
+
+    public function obtenerComercio($id){
+        //No se usa una sentencia preparada debido a que no utilizamos parámetros
+        $array['id']=$id;
+        $DbHelper=new DbHelper();
+        $sentencia=$DbHelper->ejecutarQuery(Querys::TRAER_COMERCIOS,$array);
+        if($sentencia != "error"){
+            $DbHelper->confirmarCambio();
+            return $sentencia->fetch();
         }else{
             return json_encode($json['estado']="error");
         }
