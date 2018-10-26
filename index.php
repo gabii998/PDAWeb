@@ -4,6 +4,7 @@ session_start();
 include __DIR__ . '/controladores/Comercios.php';
 include __DIR__ . '/controladores/Usuarios.php';
 include __DIR__ . '/controladores/Mapa.php';
+require __DIR__ . '/vendor/autoload.php';
 //Setear en 1 para depurar errores
 ini_set('display_errors', 1);
 $request = $_SERVER['REDIRECT_URL'];//Valor de la url
@@ -65,6 +66,9 @@ switch ($request) {
         }
         break;
     default:
+    case '/QR':
+    echo QRcode::png('https://localhost/Comercio?id=1', false, QR_ECLEVEL_H, 10, 0);
+        break;
     $titulo="Pagina no encontrada";
     $mensaje="Lo sentimos,la página solicitada no fue encontrada";
         require __DIR__ . '/vistas/Error.php';

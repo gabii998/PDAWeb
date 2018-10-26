@@ -9,5 +9,7 @@ Header always set X-Content-Type-Options "nosniff"
 	RewriteCond %{REQUEST_FILENAME} !-d
 
 	RewriteRule ^(.*)$ index.php/$1 [L]
+
+	
 </IfModule>
 Options -Indexes
