@@ -9,8 +9,8 @@ include_once  SITE_ROOT.'/modelos/Comercio.php';
       public static function servirVista(){
             require SITE_ROOT. '/vistas/Comercio.php';
       }
-      public static function agregarLugar($parametrosPost){
-            $comercio=new Comercio($parametrosPost['nombre'],$parametrosPost['email'],$parametrosPost['latitud'],$parametrosPost['longitud']);
+      public static function agregarLugar($parametros){
+            $comercio=new Comercio($parametros['nombre'],$parametros['email'],$parametros['latitud'],$parametros['longitud'],$parametros['paginaWeb'],$parametros['descripcion']);
             echo ComercioDAO::agregar($comercio);
       }
       public static function traerLugares(){

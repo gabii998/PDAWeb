@@ -4,12 +4,16 @@ class Comercio{
     private $emailDueno;
     private $latitud;
     private $longitud;
+    private $paginaWeb;
+    private $descripcion;
 
-    function __construct($nombre, $emailDueno,  $latitud, $longitud) {
+    function __construct($nombre, $emailDueno,  $latitud, $longitud,$paginaWeb,$descripcion) {
         $this->nombre = $nombre;
         $this->emailDueno = $emailDueno;
         $this->latitud = $latitud;
         $this->longitud = $longitud;
+        $this->paginaWeb=$paginaWeb;
+        $this->descripcion=$descripcion;
     }
     function getNombre() {
         return $this->nombre;

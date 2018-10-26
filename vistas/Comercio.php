@@ -23,8 +23,8 @@
             </div>
             <div class="col-md-6 col-lg-7 pt-4">
                 <h5 id="comercioNombre"><strong>Nombre: </strong></h5>
-                <h5 id="comercioSitio">Página Web:</h5>
-                <h5 id="comercioDescripcion">Descripción:</h5>
+                <h5 id="comercioSitio"><strong>Página Web: </strong></h5>
+                <h5 id="comercioDescripcion"><strong>Descripción: </strong></h5>
                 <h5 id="comercioMapa"><a href="#">Ubicación</a></h5>
             </div>
         </div>

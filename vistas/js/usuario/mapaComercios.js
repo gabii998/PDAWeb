@@ -3,7 +3,7 @@ $(function(){
 
   (function(app){
     app.init=function(){
-      console.log("hola")
+      //console.log("hola")
       app.traerComercio();
     };
 
@@ -14,7 +14,7 @@ $(function(){
                 dataType:"JSON",
                 data: app.obtenerURLVars(),
                 success:function(datos){
-                    //console.log(datos);
+                    console.log(datos);
                     app.poblarPagina(datos);
                 },
                 error: function(){
@@ -24,6 +24,8 @@ $(function(){
     };
     app.poblarPagina=function(datos){
       $("#comercioNombre").append(datos['nombre']);
+      $("#comercioSitio").append("<a href="+datos['paginaWeb']+">"+datos['paginaWeb']+"</a>")
+      $("#comercioDescripcion").append(datos['descripcion']);
     };
 
     app.obtenerURLVars=function () {

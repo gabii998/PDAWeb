@@ -48,6 +48,8 @@ $(function () {
         datos['longitud']=$("#y").text();
         datos['nombre']=$("#nombreLocal").val();
         datos['email']=$("#navbarDropdownMenuLink").text();
+        datos['paginaWeb']=$("#paginaWeb").val();
+        datos['descripcion']=$("#descripcion").val();
         //console.log(datos);
         app.enviarUbicación(datos);
       });

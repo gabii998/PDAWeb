@@ -22,10 +22,10 @@
         ?>
         <div class="container">
             <div class="row">
-                <div class="col text-center mt-5">
+                <div class="col text-center mt-3">
                 
 
-                    <h1 class="font-weight-bold">Postulá tu local</h1>
+                    <h2 class="font-weight-bold">Postulá tu local</h2>
 
 
 
@@ -37,7 +37,7 @@
         <div class="container" id="contenido">
             <form id="formRegistro">
                 <div class="row" id="mensaje"></div>
-                <div class="row py-5" >
+                <div class="row py-3" >
                     <div class="col-md order-2" >
                         <div class="md-form mb-5">
                             <i class="fa fa-address-card prefix grey-text"></i>
@@ -48,6 +48,16 @@
                             <i class="fa fa-location-arrow prefix grey-text"></i>
                             <input required id="ubicacionLocal" type="text" name="UbicacionLocal" placeholder="Calle 123,Rivadavia,Mendoza" class="form-control"  >
                             <label for="defaultForm-email">Ubicación</label>
+                        </div>
+                        <div class="md-form mb-5">
+                            <i class="fa fa-cloud prefix grey-text"></i>
+                            <input required id="paginaWeb" type="text" name="paginaWeb" placeholder="https://www.facebook.com/miNegocio" class="form-control"  >
+                            <label for="defaultForm-email">Página Web</label>
+                        </div>
+                        <div class="md-form mb-5">
+                            <i class="fa fa-pencil-square-o prefix grey-text"></i>
+                            <input required id="descripcion" type="text" name="descripcion" placeholder="Un negocio dedicado a..." class="form-control"  >
+                            <label for="defaultForm-email">Descripción</label>
                         </div>
                         <div class="row">
                             <div class="col text-center">
@@ -75,7 +85,7 @@
 
 
                     </div>
-                    <div class="col-md order-1" style="height: 300px">
+                    <div class="col-md order-1 mb-3" style="height: 450px">
                         <div id="mapa"></div>
                         <span  style="display:none" id="x"></span>
                         <span  style="display:none" id="y"></span>

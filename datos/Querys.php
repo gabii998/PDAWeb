@@ -62,6 +62,8 @@ const CREAR_TABLA_COMERCIOS="CREATE TABLE IF NOT EXISTS `PDA`.`Comercios` (
   `Usuarios_email` VARCHAR(100) NOT NULL,
   `latitud` VARCHAR(45) NULL,
   `longitud` VARCHAR(45) NOT NULL,
+  `paginaWeb` VARCHAR(200) NULL,
+  `descripcion` VARCHAR(250) NULL,
   PRIMARY KEY (`latitud`, `longitud`),
   KEY(`id`),
   CONSTRAINT `fk_Comercios_Usuarios1`
@@ -74,7 +76,7 @@ DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_spanish_ci";
 
 //const INSERTAR_COMERCIO="INSERT INTO `PDA`.`Comercios`(nombre,Usuarios_email,Ubicacion_id)VALUES(?,?,?);";
-const INSERTAR_COMERCIO="INSERT INTO `PDA`.`Comercios`(`nombre`,`Usuarios_email`,`latitud`,`longitud`)VALUES(?,?,?,?)";
+const INSERTAR_COMERCIO="INSERT INTO `PDA`.`Comercios`(`nombre`,`Usuarios_email`,`latitud`,`longitud`,`paginaWeb`,`descripcion`)VALUES(?,?,?,?,?,?)";
 const TRAER_COMERCIOS="SELECT * FROM `PDA`.`Comercios`";
 const TRAER_COMERCIO="SELECT * FROM `PDA`.`Comercios` WERE id=?";
 }
