@@ -4,7 +4,8 @@ session_start();
 include __DIR__ . '/controladores/Comercios.php';
 include __DIR__ . '/controladores/Usuarios.php';
 include __DIR__ . '/controladores/Mapa.php';
-require __DIR__ . '/vendor/autoload.php';
+include __DIR__ . '/controladores/QR.php';
+
 //Setear en 1 para depurar errores
 ini_set('display_errors', 1);
 $request = $_SERVER['REDIRECT_URL'];//Valor de la url
@@ -67,7 +68,8 @@ switch ($request) {
         break;
     default:
     case '/QR':
-    echo QRcode::png('https://localhost/Comercio?id=1', false, QR_ECLEVEL_H, 10, 0);
+    header('Content-Type: image/png');//Para que se muestre como una imagen y no como un string
+    controladorQR::generarQR($_GET['id']);
         break;
     $titulo="Pagina no encontrada";
     $mensaje="Lo sentimos,la página solicitada no fue encontrada";
