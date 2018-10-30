@@ -19,7 +19,7 @@
         </div>
         <div class="row">
             <div class="col mx-auto">
-                <img src="https://mdbootstrap.com/img/Others/documentation/img%20(75)-mini.jpg" class="img-fluid" alt="Fotografía del comercio">
+                <img src="" class="img-fluid" alt="Fotografía del comercio">
             </div>
             <div class="col-md-6 col-lg-7 pt-4">
                 <h5 id="comercioNombre"><strong>Nombre: </strong></h5>
@@ -41,6 +41,6 @@
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABnx9fjUPqca7ylNahJDGf18Fo0IQEQ0s&callback=initMap">
     </script>
-    <script type="text/javascript" src="/vistas/js/usuario/mapaComercios.js"></script>
+    <script type="text/javascript" src="/vistas/js/usuario/Comercios.js"></script>
   </body>
 </html>

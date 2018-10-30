@@ -23,6 +23,6 @@
         <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABnx9fjUPqca7ylNahJDGf18Fo0IQEQ0s&callback=initMap">
         </script>
-        <script src="/vistas/js/usuario/map.js"></script>
+        <script src="/vistas/js/usuario/Mapa.js"></script>
     </body>
 </html>

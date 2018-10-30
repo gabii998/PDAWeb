@@ -106,7 +106,7 @@
     <!--Date picker-->
     <script type="text/javascript" src="/vistas/js/datepicker.min.js"></script>
     <script type="text/javascript" src="/vistas/js/datepicker-es.js"></script>
-    <script type="text/javascript" src="/vistas/js/usuario/registro.js"></script>
+    <script type="text/javascript" src="/vistas/js/usuario/Registro.js"></script>
 </body>
 
 </html>

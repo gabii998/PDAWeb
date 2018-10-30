@@ -123,7 +123,7 @@
             echo ' <script src="/vistas/js/usuario/modal.js"></script>';
         }
         ?>
-        <script src="vistas/js/mapaloc.js" type="text/javascript"></script>
+        <script src="vistas/js/usuario/NuevoComercio.js" type="text/javascript"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABnx9fjUPqca7ylNahJDGf18Fo0IQEQ0s&language=es"></script>
     </body>
 </html>
