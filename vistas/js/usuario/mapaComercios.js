@@ -26,6 +26,7 @@ $(function(){
       $("#comercioNombre").append(datos['nombre']);
       $("#comercioSitio").append("<a href="+datos['paginaWeb']+">"+datos['paginaWeb']+"</a>")
       $("#comercioDescripcion").append(datos['descripcion']);
+      $("#imgQR").attr('src' , window.location.origin+"/Qr?id="+datos['id']);
     };
 
     app.obtenerURLVars=function () {

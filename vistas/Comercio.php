@@ -28,6 +28,12 @@
                 <h5 id="comercioMapa"><a href="#">Ubicación</a></h5>
             </div>
         </div>
+        <div class="row">
+            <div class="col-3 mx-auto text-center">
+                <img id="imgQR" src="" class="pl-5 h-50" alt="QR del comercio">
+            </div>
+            <div class="col-9"></div>
+        </div>
     </div>
     <?php
       include_once("scriptsIncluidos.html");
