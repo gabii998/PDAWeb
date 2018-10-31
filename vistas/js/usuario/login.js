@@ -55,7 +55,7 @@ $(function(){
                 success:function(datos){
                     console.log(datos);
                     if(datos['estado']!="logueado"){
-                        app.imprimirAlerta();
+                        app.imprimirAlerta(datos['estado']);
                     }else{
                         location.reload();
                     }
@@ -65,13 +65,13 @@ $(function(){
                 }
             });
         };
-        app.imprimirAlerta = function(){
+        app.imprimirAlerta = function($mensaje){
             var contenido=`
             <div class="alert alert-danger text-center" role="alert">
-                Error al iniciar sesión
+                `+$mensaje+`
             </div>
             `;
-            $("#mensajeLogin").replaceWith(contenido);
+            $("#mensajeLogin").html(contenido);
         };
 
         app.init();

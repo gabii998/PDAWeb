@@ -7,7 +7,7 @@ include __DIR__ . '/controladores/Mapa.php';
 include __DIR__ . '/controladores/QR.php';
 
 //Setear en 1 para depurar errores
-ini_set('display_errors', 0);
+ini_set('display_errors', 1);
 $request = $_SERVER['REDIRECT_URL'];//Valor de la url
 
 switch ($request) {

@@ -35,10 +35,10 @@ class UsuarioDAO implements Querys{
                     $json['correo']=$usuario->getEmail();
                     $json['dni']=$usuario->getDni();
                 }else{
-                    $json['estado']="contrasenaErronea";
+                    $json['estado']="Contraseña Erronea";
                 }
             }else{
-            $json['estado']="emailIncorrecto";
+            $json['estado']="Email incorrecto";
             }
         return $json;
     }
