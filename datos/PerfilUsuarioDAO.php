@@ -6,14 +6,14 @@ include_once "Querys.php";
 class PerfilUsuarioDAO implements Querys{
     //Clase que interactúa directamente con la tabla 'UsuariosInfo'
 
-    public function crearTablaPerfiles(){
+    public static function crearTablaPerfiles(){
         $DbHelper=new DbHelper();
         $DbHelper->ejecutarQuery(Querys::CREAR_TABLA_PERFIL_USUARIO);
     }
 
-    public function completarPerfil(PerfilUsuario $usuario){
+    public static function completarPerfil(PerfilUsuario $usuario){
         $DbHelper=new DbHelper();
-        $this->crearTablaPerfiles();
+        self::crearTablaPerfiles();
         
         $sentencia=$DbHelper->ejecutarQuery(Querys::INSERTAR_PERFIL,(array)$usuario);
         if($sentencia != "error"){
