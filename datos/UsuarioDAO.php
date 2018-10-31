@@ -28,7 +28,7 @@ class UsuarioDAO implements Querys{
         $DbHelper=new DbHelper();
         $arreglo['email']=$usuario->getEmail();
         $sentencia=$DbHelper->ejecutarQuery(Querys::OBTENER_USUARIO,$arreglo);
-        if($sentencia != "error"){
+        if($sentencia->rowCount() >= 1 ){
             $resultado = $sentencia->fetch();
                 if(password_verify($usuario->getContrasena(), $resultado['pass'])){
                     $json['estado']="logueado";
